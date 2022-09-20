@@ -100,8 +100,8 @@ public class Contact {
 	 */
 	@Override
 	public String toString() {
-		return "\nContact [\nfirstName=" + firstName + ", \nlastName=" + lastName + ", \naddress=" + address + ",\n city=" + city
-				+ ", \nstate=" + state + ",\n zip=" + zip + ",\n phone=" + phone + ",\n email=" + email + "]";
+		return "\nContact [\nfirstName=" + firstName + ", \nlastName=" + lastName + ", \naddress=" + address
+				+ ",\n city=" + city + ", \nstate=" + state + ",\n zip=" + zip + ",\n phone=" + phone + ",\n email="
+				+ email + "]";
 	}
-
 }
