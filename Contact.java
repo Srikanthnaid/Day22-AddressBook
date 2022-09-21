@@ -11,8 +11,13 @@ public class Contact {
 	private String email;
 
 	/**
+	 * Default constructor
+	 */
+	public Contact() {
+	}
+
+	/**
 	 * Parameterized constructor
-	 * 
 	 */
 	public Contact(String firstName, String lastName, String address, String city, String state, String zip,
 			String phone, String email) {
@@ -30,6 +35,7 @@ public class Contact {
 	/**
 	 * Getter and setters methods
 	 * 
+	 * @return
 	 */
 	public String getFirstName() {
 		return firstName;
@@ -103,5 +109,4 @@ public class Contact {
 		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
 				+ ", state=" + state + ", zip=" + zip + ", phone=" + phone + ", email=" + email + "]";
 	}
-
 }
