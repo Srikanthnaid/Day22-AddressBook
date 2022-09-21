@@ -11,14 +11,18 @@ public class AddressBook {
 		 * creating object of AddNewContact for adding new contact
 		 */
 		AddNewContact addNew = new AddNewContact();
+		
+		/**
+		 * adding multiple persons in address book
+		 */
+		addNew.addMultipleContact();
 
 		while (true) {
 			System.out.println("Enter your choice:\n " 
 									+ "1. Add Contact\n " 
 									+ "2. Edit Contact \n "
-									+ "3. Display Contacts \n " 
-									+ "4. Delete Contact \n"
-									+ "5. Exit ");
+									+ "3. Display Contacts  " 
+									+ "\n 4. Exit ");
 			int choice = sc.nextInt();
 			switch (choice) {
 			
