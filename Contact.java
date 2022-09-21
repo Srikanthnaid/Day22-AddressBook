@@ -18,15 +18,6 @@ public class Contact {
 
 	/**
 	 * Parameterized constructor
-	 * 
-	 * @param firstName - first name of contact
-	 * @param lastName  - last name of contact
-	 * @param address   - address of contact
-	 * @param city      - city of contact
-	 * @param state     - state of contact
-	 * @param zip       - zip of contact
-	 * @param phone     - phone of contact
-	 * @param email     - email of contact
 	 */
 	public Contact(String firstName, String lastName, String address, String city, String state, String zip,
 			String phone, String email) {
