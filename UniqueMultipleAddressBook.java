@@ -1,14 +1,19 @@
 package com.AddressBook;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 public class UniqueMultipleAddressBook {
+
 	/**
 	 * Hashmap to add multiple address book
 	 */
 	Map<String, AddNewContact> addressMap = new HashMap<>();
+	List<Contact> contacts = new ArrayList<Contact>();
+	Scanner sc = new Scanner(System.in);
 
 	public void addAddress() {
 		System.out.println("Enter New Address book name :");
@@ -110,5 +115,32 @@ public class UniqueMultipleAddressBook {
 			System.out.println(addressMap.get(i).contacts); // we print the values of the key
 		}
 		System.out.println(" ");
+	}
+
+	/**
+	 * Search personin contact by city Name
+	 */
+	public void searchByCity() {
+		System.out.println("Enter the name of the City to search the persons : ");
+		String cityName = sc.next();
+		for (String i : addressMap.keySet()) {
+			List<Contact> arr = addressMap.get(i).contacts;
+			arr.stream().filter(person -> person.getCity().equals(cityName))
+					.forEach(person -> System.out.println(person.getFirstName()));
+		}
+	}
+
+	/**
+	 * Search Person By State
+	 */
+	public void searchByState() {
+
+		System.out.println("Enter the name of the State to Search persons : ");
+		String stateName = sc.next();
+		for (String i : addressMap.keySet()) {
+			List<Contact> arr = addressMap.get(i).contacts;
+			arr.stream().filter(person -> person.getState().equals(stateName))
+					.forEach(person -> System.out.println(person.getFirstName()));
+		}
 	}
 }
