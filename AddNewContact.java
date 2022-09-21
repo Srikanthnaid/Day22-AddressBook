@@ -10,6 +10,8 @@ public class AddNewContact {
 	Scanner sc = new Scanner(System.in);
 	List<Contact> contacts = new ArrayList<Contact>();
 	Map<String,AddNewContact> adddressBook = new HashMap<>();
+	public static HashMap<String, ArrayList<Contact>> personByCity = new HashMap<String, ArrayList<Contact>>();
+	public static HashMap<String, ArrayList<Contact>> personByState = new HashMap<String, ArrayList<Contact>>();
 	Contact contact = new Contact();
 
 	/**
@@ -230,5 +232,35 @@ public class AddNewContact {
 		 */
 		contacts.remove(contact);                                                                       
 		System.out.println("The contact has been deleted from the Address Book");
+	}
+	
+
+	/**
+	 *  Method to check the person  by city
+	 * 
+	 */
+	public void viewPersonByCity(Contact contact) {
+		if (personByCity.containsKey(contact.getCity())) {
+			personByCity.get(contact.getCity()).add(contact);
+		}
+		else {
+			ArrayList<Contact> cityList = new ArrayList<Contact>();
+			cityList.add(contact);
+			personByCity.put(contact.getCity(), cityList);
+		}
+	}
+	/**
+	 * Method to check person by state
+	 * @param contact
+	 */
+	public void viewPersonByState(Contact contact) {
+		if (personByState.containsKey(contact.getState())) {			
+			personByState.get(contact.getState()).add(contact);
+		}
+		else {
+			ArrayList<Contact> stateList = new ArrayList<Contact>();
+			stateList.add(contact);
+			personByState.put(contact.getState(), stateList);
+		}
 	}
 }
